@@ -15,7 +15,7 @@
   overflow-y: hidden;
 }
 
-.navbar a {
+.navbar a, .navbar span {
   font-family: "Noto Sans", sans-serif;
   color: rgba(255, 255, 255, 0.89);
   -ms-flex-item-align: center;
