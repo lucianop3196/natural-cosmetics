@@ -1,16 +1,20 @@
 import React from "react";
-import "../styles/Navbar.css";
-function Navbar() {
+import "../styles/NavBar.css";
+
+function NavBar() {
   return (
     <div className="navbar">
-      <span>Natural cosmetics</span>
+      <a href="/home">Natural cosmetics</a>
       <a href="/home">Home</a>
       <a href="/about">About</a>
       <a href="/shop">Shop</a>
       <a href="/contact">Contact</a>
-      <a className="signIn" href="/signIn">Sign In</a>
+      <button className="cartWidget"><i className="fas fa-shopping-cart"></i></button>
+      <a className="signIn" href="/signIn">
+        Sign In
+      </a>
     </div>
   );
 }
 
-export default Navbar;
+export default NavBar;
