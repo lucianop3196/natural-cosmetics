@@ -13,10 +13,6 @@
   position: relative;
   overflow-x: hidden;
   overflow-y: hidden;
-  .cartWidget {
-    background-color: inherit;
-    border: none;
-  }
   a,
   span {
     font-family: "Noto Sans", sans-serif;
@@ -24,8 +20,10 @@
     color: rgba(255, 255, 255, 0.89);
     align-self: center;
     padding: 20px;
+    text-decoration: none;
   }
-  a:hover, .cartWidget:hover {
+  a:hover,
+  .cartWidget:hover {
     background-color: rgb(75, 78, 250);
     transition: 0.3s;
   }

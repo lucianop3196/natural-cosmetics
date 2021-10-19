@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/NavBar.css";
+import CartWidget from "./CartWidget";
 
 function NavBar() {
   return (
@@ -9,7 +10,7 @@ function NavBar() {
       <a href="/about">About</a>
       <a href="/shop">Shop</a>
       <a href="/contact">Contact</a>
-      <button className="cartWidget"><i className="fas fa-shopping-cart"></i></button>
+      <CartWidget/>
       <a className="signIn" href="/signIn">
         Sign In
       </a>

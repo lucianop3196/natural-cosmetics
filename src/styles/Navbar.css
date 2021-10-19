@@ -21,11 +21,6 @@
   overflow-y: hidden;
 }
 
-.navbar .cartWidget {
-  background-color: inherit;
-  border: none;
-}
-
 .navbar a,
 .navbar span {
   font-family: "Noto Sans", sans-serif;
@@ -35,9 +30,11 @@
       -ms-grid-row-align: center;
       align-self: center;
   padding: 20px;
+  text-decoration: none;
 }
 
-.navbar a:hover, .navbar .cartWidget:hover {
+.navbar a:hover,
+.navbar .cartWidget:hover {
   background-color: #4b4efa;
   -webkit-transition: 0.3s;
   transition: 0.3s;
