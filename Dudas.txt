@@ -1,2 +1,4 @@
 1) Tengo que importar en cada componente todos las etiquetas (serian etiquetas??) que necesito?
 Ejemplo componente NavBar. Tuve que importar container, nav, navbar, navbardropdown etc...
+
+2) Intente hacer destructuring con las props de itemCount pero no me esta funcionando

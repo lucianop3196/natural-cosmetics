@@ -1,0 +1,21 @@
+.itemCount {
+  background-color: #aff4fd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.itemCount .counter {
+  border: none;
+  width: 20%;
+}
+
+.itemCount span {
+  text-align: center;
+}
+/*# sourceMappingURL=ItemCount.css.map */

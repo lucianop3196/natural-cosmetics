@@ -1,0 +1,13 @@
+.itemCount {
+  background-color: rgb(175, 244, 253);
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  .counter {
+    border: none;
+    width: 20%;
+  }
+  span {
+      text-align: center;
+  };
+}
