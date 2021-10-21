@@ -1,12 +1,17 @@
-import React from "react";
-import "../styles/ItemCount.css"
+import React, { useState } from "react";
+import "../styles/ItemCount.css";
 
-function ItemCount({props}) {
+function ItemCount({ props }) {
+  const [count, setCount] = useState(props.initial);
   return (
     <div className="itemCount">
-      <button className="counter"><i className="fas fa-minus"></i></button>
-      <span className="counter">{props.initial}</span>
-      <button className="counter"><i className="fas fa-plus"></i></button>
+      <button onClick={() => setCount(count - 1)} className="counter">
+        <i className="fas fa-minus"></i>
+      </button>
+      <span className="counter">{count}</span>
+      <button onClick={() => setCount(count + 1)} className="counter">
+        <i className="fas fa-plus"></i>
+      </button>
     </div>
   );
 }
