@@ -1,11 +1,15 @@
 .itemCount {
-  background-color: rgb(175, 244, 253);
+  background-color: white;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  .counter {
+  border: 1px solid black;
+  .counter, .counterButton {
     border: none;
     width: 20%;
+  }
+  .counterButton {
+    background-color: rgb(209, 226, 148);
   }
   span {
       text-align: center;

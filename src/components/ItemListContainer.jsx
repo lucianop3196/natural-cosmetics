@@ -3,7 +3,7 @@ import ItemCount from "./ItemCount";
 import "../styles/ItemListContainer.css";
 
 function ItemListContainer({ greeting }) {
-  let propsItemCount= {initial: 1}
+  let propsItemCount= {initial: 1, stock:10}
   return (
     <div className="itemContainer">
       <h2>{greeting}</h2>
