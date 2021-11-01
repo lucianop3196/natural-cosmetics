@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <NavBar/>
         <h1>Proyecto de cosmética natural</h1>
-        <ItemListContainer greeting="Aca se mostrarán todos mis productos"/>
+        <ItemListContainer/>
       </header>
     </div>
   );
