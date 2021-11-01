@@ -5,7 +5,8 @@ const products = [
       category: "shampoo sólido",
       price: "350",
       pictureURL:"",
-      stock: "10"
+      stock: "10",
+      initial: 1
       },
     {
       id: "2",
@@ -13,7 +14,8 @@ const products = [
       category: "shampoo sólido",
       price: "380",
       pictureURL:"",
-      stock: "10"
+      stock: "10",
+      initial: 1
       },
     {
       id: "3",
@@ -21,7 +23,8 @@ const products = [
       category: "desodorante",
       price: "300",
       pictureURL: "",
-      stock: "10"
+      stock: "10",
+      initial: 1
     },
     {
       id: "4",
@@ -29,7 +32,8 @@ const products = [
       category: "desodorante",
       price: "320",
       pictureURL: "",
-      stock: "10"
+      stock: "10",
+      initial: 1
     },
   ];
 
