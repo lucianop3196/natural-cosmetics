@@ -1,5 +1,5 @@
 import ItemCount from "./ItemCount";
-import item from "../styles/item.css"
+import "../styles/Item.css"
 
 function Item({prod}) {
   return (
