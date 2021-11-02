@@ -6,13 +6,13 @@ import "../styles/ItemListContainer.css";
 
 function ItemListContainer() {
   const [product, setProduct] = useState([]);
-  const { idCategory } = useParams;
+  const { idCategory } = useParams();
 
   useEffect(() => {
     if (idCategory) {
       getFetch
         .then((res) => {
-          setProduct(res.filter(prod => prod.category === idCategory));
+          setProduct(res.filter((prod) => prod.category === idCategory));
         })
         .catch((err) => console.log(err));
     } else {
@@ -23,7 +23,6 @@ function ItemListContainer() {
         .catch((err) => console.log(err));
     }
   }, [idCategory]);
-
   return (
     <div className="itemContainer">
       <ItemList product={product} />
