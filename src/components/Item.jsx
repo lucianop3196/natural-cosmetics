@@ -1,5 +1,6 @@
 import ItemCount from "./ItemCount";
 import "../styles/Item.css"
+import {Link} from "react-router-dom";
 
 function Item({prod}) {
   return (
@@ -7,7 +8,7 @@ function Item({prod}) {
       <div>{prod.name}</div>
       <div>{prod.price}</div>
       <div><img src={prod.pictureURL} alt={`Imagen del producto: ${prod.name}`} /></div>
-      <button>Detalles</button>
+      <Link to={`/detail/${prod.id}`}><button>Detalles</button></Link>
       <ItemCount props={prod}/>
     </div>
   );
