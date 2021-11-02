@@ -2,7 +2,7 @@ const products = [
     {
       id: "1",
       name: "prueba1",
-      category: "shampoo sólido",
+      category: "shampoo",
       price: "350",
       pictureURL:"",
       stock: "10",
@@ -11,7 +11,7 @@ const products = [
     {
       id: "2",
       name: "prueba2",
-      category: "shampoo sólido",
+      category: "shampoo",
       price: "380",
       pictureURL:"",
       stock: "10",
