@@ -9,7 +9,9 @@ function NavBar() {
       <Link to={"/"}>Natural cosmetics</Link>
       <Link to={"/"}>Productos</Link>
       <Link to={"/category/shampoo"}>Shampoo</Link>
-      <Link to={"/category/desodorante"}>Desodorante</Link>
+      <Link to={"/category/cuidado personal"}>Cuidado personal</Link>
+      <Link to={"/category/jabon"}>Jabón natural</Link>
+      <Link to={"/category/limpieza"}>Limpieza</Link>
       <CartWidget/>
       <a className="signIn" href="/signIn">
         Sign In

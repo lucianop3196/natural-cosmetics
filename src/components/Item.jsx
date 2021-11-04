@@ -7,7 +7,7 @@ function Item({prod}) {
     <div className="item">
       <div>{prod.name}</div>
       <div>{prod.price}</div>
-      <div><img src={prod.pictureURL} alt={`Imagen del producto: ${prod.name}`} /></div>
+      <img src={prod.pictureURL} alt={`Imagen del producto: ${prod.name}`} />
       <Link to={`/detail/${prod.id}`}><button>Detalles</button></Link>
       <ItemCount props={prod}/>
     </div>
