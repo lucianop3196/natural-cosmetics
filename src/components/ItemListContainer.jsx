@@ -23,10 +23,20 @@ function ItemListContainer() {
         .catch((err) => console.log(err));
     }
   }, [idCategory]);
+  const title = () => {
+    if (idCategory) {
+      return (`${idCategory.charAt(0).toUpperCase() + idCategory.slice(1)}`);
+    } else {
+      return ("Productos")
+    }
+  };
   return (
-    <div className="itemContainer">
-      <ItemList product={product} />
-    </div>
+    <>
+      <h1>{title()}</h1>
+      <div className="itemContainer">
+        <ItemList product={product} />
+      </div>
+    </>
   );
 }
 

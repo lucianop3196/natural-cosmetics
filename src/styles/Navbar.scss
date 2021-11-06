@@ -4,28 +4,47 @@
   }
 }
 .navbar {
-  width: 100%;
-  height: 8vh;
-  background-color: rgb(5, 9, 235);
+  height: 10vh;
+  background-color: #fff;
   display: flex;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  position: relative;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  box-shadow: 0px 5px 20px  rgb(202, 202, 202);
   a,
-  span {
-    font-family: "Noto Sans", sans-serif;
+  span, .cartWidget {
+    font-family: "Lato", sans-serif;
     font-size: 16px;
-    color: rgba(255, 255, 255, 0.89);
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #979ea7;
     align-self: center;
     padding: 20px;
     text-decoration: none;
+    position: relative;
   }
   a:hover,
   .cartWidget:hover {
-    background-color: rgb(75, 78, 250);
     transition: 0.3s;
+    color: #8f42ec;
+    text-shadow: 0px 0px 0.5px black;
+    cursor: pointer;
+  }
+  a:after,
+  .cartWidget:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #8f42ec;
+    left: 0;
+    bottom: 0;
+    transform: scale(0, 1);
+    transition: 0.3s;
+  }
+  a:hover:after,
+  .cartWidget:hover:after {
+    transform: scale(1, 1);
+    width: 100%;
   }
   .signIn {
     position: absolute;
