@@ -4,8 +4,15 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   background-color: #fff;
+}
+
+h1 {
+  margin: 30px;
+  padding-left: 30px;
+  letter-spacing: 2px;
 }
 /*# sourceMappingURL=ItemListContainer.css.map */

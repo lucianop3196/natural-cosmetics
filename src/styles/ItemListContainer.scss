@@ -1,6 +1,11 @@
 .itemContainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: start;
     background-color: #fff;
+}
+h1 {
+    margin: 30px;
+    padding-left: 30px;
+    letter-spacing: 2px;
 }

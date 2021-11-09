@@ -17,9 +17,9 @@ function ItemDetailContainer() {
     } 
   }, [id]);
   return (
-    <div>
+    <>
         <ItemDetail props={prodDetail}/>
-    </div>
+    </>
   );
 }
 

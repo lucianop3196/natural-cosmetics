@@ -1,12 +1,37 @@
 .item {
-    border: 1px solid black;
-    padding: 15px;
-    width: 350px ;
-    margin: 30px;
-    background-color: #dabcff;
-    border: none;
-    img {
-        width: 100%;
-        height: 200px;
-    }
+  border: 1px solid black;
+  padding: 15px;
+  width: 350px;
+  margin: 30px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: none;
+  img {
+    width: 100%;
+    height: 200px;
+  }
+  p {
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    // font-weight: bold;
+  }
+  .prodName {
+    text-align: center;
+    font-size: 25px;
+  }
+  .details {
+    padding: 0.375rem 0.75rem;
+    border: 1px solid #8f42ec;
+    border-radius: 0.25rem;
+    color: #8f42ec;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+    margin-top: 20px;
+    
+  }
+
+  .details:hover,
+  .details:active,
+  .details:focus {
+    color: #fff;
+    background-color: #8f42ec;
+  }
 }

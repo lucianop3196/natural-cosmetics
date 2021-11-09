@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
+import "../styles/ItemDetail.css"
 
 function ItemDetail({ props }) {
   const [quantity, setQuantity] = useState(1);
@@ -17,19 +18,19 @@ function ItemDetail({ props }) {
   };
 
   return (
-    <>
+    <div className="itemDetail">
       <p>{props.name}</p>
       <p>{props.category}</p>
-      <p>{props.price}</p>
+      <p>Precio: ${props.price}</p>
       <p>{props.detail}</p>
       {purchaseQ ? (
         <Link to={"/cart"}>
-          <button>Continuar la compra</button>
+          <button className="btnToCart">Continuar la compra</button>
         </Link>
       ) : (
         <ItemCount stock={props.stock} onAdd={onAdd} initial={quantity} />
       )}
-    </>
+    </div>
   );
 }
 
