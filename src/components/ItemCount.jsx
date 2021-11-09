@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "../styles/ItemCount.css";
 
-function ItemCount({ props }) {
-  const [count, setCount] = useState(props.initial);
+function ItemCount({ stock, onAdd, initial }) {
+  const [count, setCount] = useState(initial);
 
   const addProduct = () => {
-    if (count < props.stock) {
+    if (count < stock) {
       setCount(count + 1);
     }
   };
@@ -16,15 +16,18 @@ function ItemCount({ props }) {
   };
 
   return (
-    <div className="itemCount">
-      <button onClick={removeProduct} className="counterButton">
-        <i className="fas fa-minus"></i>
-      </button>
-      <span className="counter">{count}</span>
-      <button onClick={addProduct} className="counterButton">
-        <i className="fas fa-plus"></i>
-      </button>
-    </div>
+    <>
+      <div className="itemCount">
+        <button onClick={removeProduct} className="counterButton">
+          <i className="fas fa-minus"></i>
+        </button>
+        <span className="counter">{count}</span>
+        <button onClick={addProduct} className="counterButton">
+          <i className="fas fa-plus"></i>
+        </button>
+      </div>
+      <button onClick={() => onAdd(count)}>Agregar al carrito</button>
+    </>
   );
 }
 

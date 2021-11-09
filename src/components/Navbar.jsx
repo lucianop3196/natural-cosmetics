@@ -12,7 +12,7 @@ function NavBar() {
       <Link to={"/category/cuidado personal"}>Cuidado personal</Link>
       <Link to={"/category/jabon"}>Jabón natural</Link>
       <Link to={"/category/limpieza"}>Limpieza</Link>
-      <CartWidget/>
+      <Link to={"/cart"}><CartWidget/></Link>
       <a className="signIn" href="/signIn">
         Sign In
       </a>

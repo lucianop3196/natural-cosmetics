@@ -20,7 +20,7 @@
 }
 
 .navbar a,
-.navbar span, .navbar .cartWidget {
+.navbar span {
   font-family: "Lato", sans-serif;
   font-size: 16px;
   letter-spacing: 1px;
@@ -34,8 +34,7 @@
   position: relative;
 }
 
-.navbar a:hover,
-.navbar .cartWidget:hover {
+.navbar a:hover {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   color: #8f42ec;
@@ -43,8 +42,7 @@
   cursor: pointer;
 }
 
-.navbar a:after,
-.navbar .cartWidget:after {
+.navbar a:after {
   content: "";
   position: absolute;
   width: 100%;
@@ -58,8 +56,7 @@
   transition: 0.3s;
 }
 
-.navbar a:hover:after,
-.navbar .cartWidget:hover:after {
+.navbar a:hover:after {
   -webkit-transform: scale(1, 1);
           transform: scale(1, 1);
   width: 100%;
