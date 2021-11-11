@@ -9,12 +9,16 @@ const CartContextProvider = ({ children }) => {
   function addToCart(items) {
     setCartList([...cartList, items]);
   }
-  
-  const showList = () => {
-    console.log(cartList);
-  };
+  function deleteFromCart(id) {
+    const itemIndex = cartList.findIndex((item) => item.props.id === id);
+    cartList.splice(itemIndex, 1);
+    setCartList(cartList);
+    // console.log(cartList);
+  }
   return (
-    <CartContext.Provider value={{ cartList, showList, addToCart }}>
+    <CartContext.Provider
+      value={{ cartList, addToCart, deleteFromCart }}
+    >
       {children}
     </CartContext.Provider>
   );

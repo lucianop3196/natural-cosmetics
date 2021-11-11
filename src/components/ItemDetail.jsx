@@ -7,7 +7,7 @@ import { useCartContext } from "../context/CartContext";
 function ItemDetail({ props }) {
   const [quantity, setQuantity] = useState(1);
   const [purchaseQ, setPurchaseQ] = useState(false);
-  const { cartList, showList, addToCart } = useCartContext();
+  const { addToCart } = useCartContext();
 
   const onAdd = (count) => {
     setQuantity(count);
