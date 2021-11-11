@@ -1,22 +1,20 @@
 import { useState } from "react";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
-import "../styles/ItemDetail.css"
+import "../styles/ItemDetail.css";
+import { useCartContext } from "../context/CartContext";
 
 function ItemDetail({ props }) {
   const [quantity, setQuantity] = useState(1);
   const [purchaseQ, setPurchaseQ] = useState(false);
+  const { cartList, showList, addToCart } = useCartContext();
 
   const onAdd = (count) => {
     setQuantity(count);
     setPurchaseQ(true);
-    if (count > 1) {
-      return alert(`Cantidad agregada al carrito: ${count} unidades`);
-    } else {
-      return alert(`Cantidad agregada al carrito: ${count} unidad`);
-    }
+    addToCart({ props, quantity: count });
   };
-
+  
   return (
     <div className="itemDetail">
       <p>{props.name}</p>
