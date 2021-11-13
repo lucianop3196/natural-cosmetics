@@ -22,6 +22,7 @@ const CartContextProvider = ({ children }) => {
       {children}
     </CartContext.Provider>
   );
+  
 };
 
 export default CartContextProvider;
