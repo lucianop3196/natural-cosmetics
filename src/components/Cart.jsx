@@ -1,7 +1,7 @@
 import { useCartContext } from "../context/CartContext";
 
 function Cart() {
-  const { cartList, deleteFromCart } = useCartContext();
+  const { cartList, deleteFromCart, clearItems } = useCartContext();
 
   return (
     <>
@@ -15,6 +15,7 @@ function Cart() {
           </button>
         </div>
       ))}
+      <button onClick={() => clearItems()}>Vaciar carrito</button>
     </>
   );
 }
