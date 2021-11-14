@@ -8,22 +8,25 @@ export const useCartContext = () => useContext(CartContext);
 const CartContextProvider = ({ children }) => {
   const [cartList, setCartList] = useState([]);
   function addToCart(items) {
-    // if (cartList.some(items => items.props.id === cartList.props.id )) {
-    //   alert("ya fue agregado al carrito");
-    // } else {
+    const itemIndex = cartList.findIndex(
+      (item) => item.props.id === items.props.id
+    );
+    if (itemIndex > -1) {
+      alert("El producto ya esta en el carrito");
+    } else {
       setCartList([...cartList, items]);
       console.log(cartList);
-    // }
+    }
   }
   function deleteFromCart(id) {
     const itemIndex = cartList.findIndex((item) => item.props.id === id);
     cartList.splice(itemIndex, 1);
-    setCartList(cartList);
+    setCartList([...cartList]);
     console.log(cartList);
   }
   function clearItems() {
     cartList.splice(0);
-    setCartList(cartList);
+    setCartList([...cartList]);
     console.log(cartList);
   }
   return (
