@@ -12,10 +12,9 @@ function ItemDetail({ props }) {
   const onAdd = (count) => {
     setQuantity(count);
     setPurchaseQ(true);
-    addToCart({ props, quantity: count }, {purchaseQ});
-    console.log(purchaseQ);
+    addToCart({ props, quantity: count, purchaseQ });
   };
-  
+
   return (
     <div className="itemDetail">
       <p>{props.name}</p>

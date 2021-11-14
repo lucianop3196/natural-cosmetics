@@ -7,14 +7,12 @@ export const useCartContext = () => useContext(CartContext);
 //SOLUCIONAR PROBLEMA CON EL IF DENTRO DEL ADDTOCART
 const CartContextProvider = ({ children }) => {
   const [cartList, setCartList] = useState([]);
-  function addToCart(items, purchaseQ) {
+  function addToCart(items) {
     // if (cartList.some(items => items.props.id === cartList.props.id )) {
     //   alert("ya fue agregado al carrito");
     // } else {
       setCartList([...cartList, items]);
       console.log(cartList);
-      // console.log(purchaseQ);
-
     // }
   }
   function deleteFromCart(id) {
