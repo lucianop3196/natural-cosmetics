@@ -2,7 +2,7 @@ const products = [
   {
     id: "1",
     name: "Calendula",
-    category: "shampoo",
+    category: "Shampoo",
     price: "350",
     pictureURL: "https://images.unsplash.com/photo-1519735777090-ec97162dc266?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=945&q=80",
     stock: "10",
@@ -12,7 +12,7 @@ const products = [
   {
     id: "2",
     name: "Detox",
-    category: "shampoo",
+    category: "Shampoo",
     price: "380",
     pictureURL: "https://images.unsplash.com/photo-1519735777090-ec97162dc266?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=945&q=80",
     stock: "10",
@@ -22,7 +22,7 @@ const products = [
   {
     id: "3",
     name: "Hibiscus y rosa mosqueta",
-    category: "shampoo",
+    category: "Shampoo",
     price: "380",
     pictureURL: "https://images.unsplash.com/photo-1519735777090-ec97162dc266?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=945&q=80",
     stock: "10",
@@ -32,7 +32,7 @@ const products = [
   {
     id: "4",
     name: "Ortiga y diente de leon",
-    category: "shampoo",
+    category: "Shampoo",
     price: "380",
     pictureURL:
       "https://images.unsplash.com/photo-1519735777090-ec97162dc266?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=945&q=80",
@@ -43,7 +43,7 @@ const products = [
   {
     id: "5",
     name: "Cacao y manteca de cacao",
-    category: "shampoo",
+    category: "Shampoo",
     price: "380",
     pictureURL: "https://images.unsplash.com/photo-1519735777090-ec97162dc266?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=945&q=80",
     stock: "10",
@@ -53,7 +53,7 @@ const products = [
   {
     id: "6",
     name: "Desodorante refrescante y protector",
-    category: "limpieza",
+    category: "Limpieza",
     price: "300",
     pictureURL: "https://images.unsplash.com/photo-1614859280183-76e352127ca7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8ZGVvZG9yYW50fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     stock: "10",
@@ -63,7 +63,7 @@ const products = [
   {
     id: "7",
     name: "Mouse de rosa mosqueta",
-    category: "cuidado personal",
+    category: "Cuidado personal",
     price: "320",
     pictureURL: "https://images.unsplash.com/photo-1591134608223-67005960e763?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
     stock: "10",
@@ -73,7 +73,7 @@ const products = [
   {
     id: "8",
     name: "Mouse de lavanda",
-    category: "cuidado personal",
+    category: "Cuidado personal",
     price: "320",
     pictureURL: "https://images.unsplash.com/photo-1591134608223-67005960e763?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
     stock: "10",
@@ -83,7 +83,7 @@ const products = [
   {
     id: "9",
     name: "Crema corporal",
-    category: "cuidado personal",
+    category: "Cuidado personal",
     price: "320",
     pictureURL: "https://images.unsplash.com/photo-1591134608223-67005960e763?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
     stock: "10",
@@ -92,8 +92,8 @@ const products = [
   },
   {
     id: "10",
-    name: "jabon de calendula",
-    category: "jabon",
+    name: "Jabon de calendula",
+    category: "Jabon",
     price: "320",
     pictureURL: "https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
     stock: "10",
@@ -103,7 +103,7 @@ const products = [
   {
     id: "11",
     name: "Agua micelar",
-    category: "limpieza",
+    category: "Limpieza",
     price: "320",
     pictureURL: "https://images.unsplash.com/photo-1597106776019-b4ecc878c202?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80",
     stock: "10",

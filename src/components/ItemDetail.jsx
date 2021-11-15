@@ -12,22 +12,32 @@ function ItemDetail({ props }) {
   const onAdd = (count) => {
     setQuantity(count);
     setPurchaseQ(true);
-    addToCart({ props, quantity: count, purchaseQ } );
+    addToCart({ props, quantity: count, purchaseQ });
   };
 
   return (
     <div className="itemDetail">
-      <p>{props.name}</p>
-      <p>{props.category}</p>
-      <p>Precio: ${props.price}</p>
-      <p>{props.detail}</p>
-      {purchaseQ ? (
-        <Link to={"/cart"}>
-          <button className="btnToCart">Continuar la compra</button>
-        </Link>
-      ) : (
-        <ItemCount stock={props.stock} onAdd={onAdd} initial={quantity} />
-      )}
+      <img
+        className="itemDetail_img"
+        src={props.pictureURL}
+        alt={`Imagen del producto: ${props.name}`}
+      />
+      <p className="itemDetail_name">{props.name}</p>
+      <p className="itemDetail_category">{props.category}</p>
+      <p className="itemDetail_price">${props.price}</p>
+      <p className="itemDetail_detail">{props.detail}</p>
+      <div className="itemDetail_count">
+        {purchaseQ ? (
+          <Link to={"/cart"}>
+            <button className="btnToCart">Continuar la compra</button>
+          </Link>
+        ) : (
+          <ItemCount stock={props.stock} onAdd={onAdd} initial={quantity} />
+        )}
+      </div>
+      <Link to={`/category/${props.category}`}>
+        <button className="btnBack">Volver</button>
+      </Link>
     </div>
   );
 }

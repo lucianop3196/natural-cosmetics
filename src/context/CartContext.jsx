@@ -12,7 +12,16 @@ const CartContextProvider = ({ children }) => {
       (item) => item.props.id === items.props.id
     );
     if (itemIndex > -1) {
-      alert("El producto ya esta en el carrito");
+      const oldQuantity = cartList[itemIndex].quantity;
+      const newQuantity = oldQuantity + items.quantity;
+      if (newQuantity < items.props.stock) {
+      items.quantity = newQuantity; 
+      cartList.splice(itemIndex, 1);
+      setCartList([...cartList, items])
+      }
+      else {
+        alert (`La cantidad seleccionada supera el stock disponible del producto`)
+      }
     } else {
       setCartList([...cartList, items]);
       console.log(cartList);

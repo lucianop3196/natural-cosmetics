@@ -25,7 +25,7 @@ function ItemListContainer() {
   }, [idCategory]);
   const title = () => {
     if (idCategory) {
-      return (`${idCategory.charAt(0).toUpperCase() + idCategory.slice(1)}`);
+      return (`${idCategory}`);
     } else {
       return ("Productos")
     }
