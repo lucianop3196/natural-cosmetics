@@ -2,7 +2,10 @@ import { useCartContext } from "../context/CartContext";
 
 function Cart() {
   const { cartList, deleteFromCart, clearItems } = useCartContext();
-
+  let finalPrice = 0;
+  for (let i in cartList) { 
+    finalPrice += parseInt(cartList[i].props.price)*cartList[i].quantity;
+  }
   return (
     <>
       {cartList.map((item) => (
@@ -16,6 +19,7 @@ function Cart() {
         </div>
       ))}
       <button onClick={() => clearItems()}>Vaciar carrito</button>
+      <div>Total: ${finalPrice} </div>
     </>
   );
 }

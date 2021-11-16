@@ -12,7 +12,7 @@ function ItemDetail({ props }) {
   const onAdd = (count) => {
     setQuantity(count);
     setPurchaseQ(true);
-    addToCart({ props, quantity: count, purchaseQ });
+    addToCart({ props, quantity: count });
   };
 
   return (
