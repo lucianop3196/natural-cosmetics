@@ -36,7 +36,7 @@ function Cart() {
                   title="Eliminar item"
                   onClick={() => deleteFromCart(item.props.id)}
                 >
-                  <i class="fas fa-minus-circle"></i>
+                  <i className="fas fa-minus-circle"></i>
                 </button>
               </div>
             </li>
@@ -48,7 +48,7 @@ function Cart() {
               title="Vaciar carrito"
               onClick={() => clearItems()}
             >
-              <i class="far fa-trash-alt"></i>
+              <i className="far fa-trash-alt"></i>
             </button>
             <div>Total: ${finalPrice}</div>
           </li>
