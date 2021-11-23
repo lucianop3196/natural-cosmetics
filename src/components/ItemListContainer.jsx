@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
-import { getFetch } from "../services/getFetch";
 import "../styles/ItemListContainer.css";
 import { getFirestore } from "../services/getFirestore";
 
@@ -18,7 +17,7 @@ function ItemListContainer() {
         .then((resp) => {
           setProduct(
             resp.docs
-              .map((prod) => ({ key: prod.id, ...prod.data() }))
+              .map((prod) => ({id:prod.id, ...prod.data() }))
               .filter((prod) => prod.category === idCategory)
           );
         })
@@ -26,7 +25,7 @@ function ItemListContainer() {
     } else {
       dbQuery
         .then((resp) => {
-          setProduct(resp.docs.map((prod) => ({ ...prod.data() })));
+          setProduct(resp.docs.map((prod) => ({id:prod.id,...prod.data() })));
         })
         .catch((err) => console.log(err));
     }

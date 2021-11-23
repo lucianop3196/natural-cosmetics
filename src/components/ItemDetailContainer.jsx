@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getFetch } from "../services/getFetch";
 import ItemDetail from "../components/ItemDetail";
 import { getFirestore } from "../services/getFirestore";
 
@@ -10,20 +9,20 @@ function ItemDetailContainer() {
 
   useEffect(() => {
     const dbConnection = getFirestore();
-    const dbQuery = dbConnection.collection("items").get();
+    const dbQuery = dbConnection.collection("items").doc(id).get();
     dbQuery.then((resp) => console.log(resp));
 
-    if (parseInt(id)) {
+    if (id) {
       dbQuery
         .then((resp) => {
-          setProdDetail(resp.docs.find((prod) => prod.id === id).data());
+          setProdDetail({id: resp.id, ...resp.data()});
         })
         .catch((err) => console.log(err));
-    } 
+    }
   }, [id]);
   return (
     <>
-        <ItemDetail props={prodDetail}/>
+      <ItemDetail props={prodDetail} />
     </>
   );
 }
