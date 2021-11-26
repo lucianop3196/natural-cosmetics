@@ -1,5 +1,11 @@
 .cartWidget {
-    background-color: inherit;
-    border: none;
-    color: #6d7c90;
+  background-color: inherit;
+  border: none;
+  color: #6d7c90;
+  position: relative;
+  .totalQuantity {
+    position: absolute;
+    left: 2px;
+    font-size: 13px;
   }
+}

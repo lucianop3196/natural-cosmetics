@@ -2,5 +2,12 @@
   background-color: inherit;
   border: none;
   color: #6d7c90;
+  position: relative;
+}
+
+.cartWidget .totalQuantity {
+  position: absolute;
+  left: 2px;
+  font-size: 13px;
 }
 /*# sourceMappingURL=CartWidget.css.map */

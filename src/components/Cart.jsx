@@ -15,7 +15,7 @@ function Cart() {
           <li className="table-header">
             <div className="col col-1">Producto</div>
             <div className="col col-2">Cantidad</div>
-            <div className="col col-3">Precio</div>
+            <div className="col col-3">Precio unitario</div>
             <div className="col col-4"></div>
           </li>
 

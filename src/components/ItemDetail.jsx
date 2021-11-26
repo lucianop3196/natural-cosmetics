@@ -34,10 +34,10 @@ function ItemDetail({ props }) {
         ) : (
           <ItemCount stock={props.stock} onAdd={onAdd} initial={quantity} />
         )}
+        <Link to={`/category/${props.category}`}>
+          <button className="btnBack">Volver</button>
+        </Link>
       </div>
-      <Link to={`/category/${props.category}`}>
-        <button className="btnBack">Volver</button>
-      </Link>
     </div>
   );
 }

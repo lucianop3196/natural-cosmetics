@@ -4,7 +4,6 @@ const CartContext = createContext();
 
 export const useCartContext = () => useContext(CartContext);
 
-//SOLUCIONAR PROBLEMA CON EL IF DENTRO DEL ADDTOCART
 const CartContextProvider = ({ children }) => {
   const [cartList, setCartList] = useState([]);
   function addToCart(items) {
