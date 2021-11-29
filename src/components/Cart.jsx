@@ -14,6 +14,7 @@ function Cart() {
     email: "",
   });
   const [orderCreated, setOrderCreated] = useState(false);
+  const [orderId, setOrderId] = useState();
 
   const finalPrice = () => {
     return cartList.reduce(
@@ -43,7 +44,7 @@ function Cart() {
     dbQuery
       .collection("orders")
       .add(order)
-      .then((resp) => console.log(resp))
+      .then(({id}) => setOrderId(id))
       .catch((err) => console.log(err))
       .finally(() =>
         setFormData({
@@ -53,7 +54,6 @@ function Cart() {
         })
       );
     
-
     const itemsToUpdate = dbQuery.collection("items").where(
       firebase.firestore.FieldPath.documentId(),
       "in",
@@ -130,8 +130,8 @@ function Cart() {
               <i className="far fa-trash-alt"></i>
             </button>{" "}
             {orderCreated ? (<>
+            <p>Tu orden de compra es: {orderId}</p>
               <Link to={"/"}><button onClick={changeOrderStatus}>Ver más productos</button></Link>
-
               <p></p>
               </>
             ) : (
