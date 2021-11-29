@@ -4,6 +4,7 @@ import firebase from "firebase";
 import "firebase/firestore";
 import { getFirestore } from "../services/getFirestore";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Cart() {
   const { cartList, deleteFromCart, clearItems } = useCartContext();
@@ -12,6 +13,7 @@ function Cart() {
     phone: "",
     email: "",
   });
+  const [orderCreated, setOrderCreated] = useState(false);
 
   const finalPrice = () => {
     return cartList.reduce(
@@ -22,9 +24,12 @@ function Cart() {
 
   const createOrder = (e) => {
     e.preventDefault();
+
+    setOrderCreated(true);
+
     let order = {};
     order.date = firebase.firestore.Timestamp.fromDate(new Date());
-    order.buyer = { name: "Lucho", phone: "32123", email: "fdfdf" };
+    order.buyer = formData;
     order.total = finalPrice();
     order.items = cartList.map((cartItem) => {
       const id = cartItem.props.id;
@@ -47,6 +52,7 @@ function Cart() {
           email: "",
         })
       );
+    
 
     const itemsToUpdate = dbQuery.collection("items").where(
       firebase.firestore.FieldPath.documentId(),
@@ -68,11 +74,18 @@ function Cart() {
         console.log("resultado batch:", res);
       });
     });
+
+
   };
-  const handleChange = (e)=> {
-    setFormData({...formData, [e.target.name]: e.target.value})
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const changeOrderStatus = () =>{
+    setOrderCreated(false);
   }
-console.log(formData);
+
   return (
     <>
       <div className="cartContainer">
@@ -115,14 +128,36 @@ console.log(formData);
               onClick={() => clearItems()}
             >
               <i className="far fa-trash-alt"></i>
-            </button>
-            <form onSubmit={createOrder} onChange={handleChange}>
-              <input type="text" name="name" placeholder="Nombre" value={formData.name }/>
-              <input type="text" name="phone" placeholder="N° Celular" value={formData.phone} />
-              <input type="email" name="email" placeholder="Email" value={formData.email} />
-              <div>Total: ${finalPrice()}</div>
-              <button>Comprar</button>
-            </form>
+            </button>{" "}
+            {orderCreated ? (<>
+              <Link to={"/"}><button onClick={changeOrderStatus}>Ver más productos</button></Link>
+
+              <p></p>
+              </>
+            ) : (
+              <form onSubmit={createOrder} onChange={handleChange}>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Nombre"
+                  value={formData.name}
+                />
+                <input
+                  type="text"
+                  name="phone"
+                  placeholder="N° Celular"
+                  value={formData.phone}
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  value={formData.email}
+                />
+                <div>Total: ${finalPrice()}</div>
+                <button>Comprar</button>
+              </form>
+            )}
           </li>
         </ul>
       </div>

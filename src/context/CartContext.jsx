@@ -35,7 +35,6 @@ const CartContextProvider = ({ children }) => {
   function clearItems() {
     cartList.splice(0);
     setCartList([...cartList]);
-    console.log(cartList);
   }
   return (
     <CartContext.Provider
