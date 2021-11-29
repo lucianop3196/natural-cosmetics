@@ -1,12 +1,78 @@
 import { useCartContext } from "../context/CartContext";
 import "../styles/Cart.css";
+import firebase from "firebase";
+import "firebase/firestore";
+import { getFirestore } from "../services/getFirestore";
+import { useState } from "react";
 
 function Cart() {
   const { cartList, deleteFromCart, clearItems } = useCartContext();
-  let finalPrice = 0;
-  for (let i in cartList) {
-    finalPrice += parseInt(cartList[i].props.price) * cartList[i].quantity;
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+  });
+
+  const finalPrice = () => {
+    return cartList.reduce(
+      (acum, prod) => acum + prod.quantity * parseInt(prod.props.price),
+      0
+    );
+  };
+
+  const createOrder = (e) => {
+    e.preventDefault();
+    let order = {};
+    order.date = firebase.firestore.Timestamp.fromDate(new Date());
+    order.buyer = { name: "Lucho", phone: "32123", email: "fdfdf" };
+    order.total = finalPrice();
+    order.items = cartList.map((cartItem) => {
+      const id = cartItem.props.id;
+      const name = cartItem.props.name;
+      const price = cartItem.quantity * parseInt(cartItem.props.price);
+      const quantity = cartItem.quantity;
+      return { id, name, price, quantity };
+    });
+
+    const dbQuery = getFirestore();
+    dbQuery
+      .collection("orders")
+      .add(order)
+      .then((resp) => console.log(resp))
+      .catch((err) => console.log(err))
+      .finally(() =>
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+        })
+      );
+
+    const itemsToUpdate = dbQuery.collection("items").where(
+      firebase.firestore.FieldPath.documentId(),
+      "in",
+      cartList.map((i) => i.props.id)
+    );
+
+    const batch = dbQuery.batch();
+
+    itemsToUpdate.get().then((collection) => {
+      collection.docs.forEach((docSnapshot) => {
+        batch.update(docSnapshot.ref, {
+          stock:
+            docSnapshot.data().stock -
+            cartList.find((item) => item.props.id === docSnapshot.id).quantity,
+        });
+      });
+      batch.commit().then((res) => {
+        console.log("resultado batch:", res);
+      });
+    });
+  };
+  const handleChange = (e)=> {
+    setFormData({...formData, [e.target.name]: e.target.value})
   }
+console.log(formData);
   return (
     <>
       <div className="cartContainer">
@@ -50,7 +116,13 @@ function Cart() {
             >
               <i className="far fa-trash-alt"></i>
             </button>
-            <div>Total: ${finalPrice}</div>
+            <form onSubmit={createOrder} onChange={handleChange}>
+              <input type="text" name="name" placeholder="Nombre" value={formData.name }/>
+              <input type="text" name="phone" placeholder="N° Celular" value={formData.phone} />
+              <input type="email" name="email" placeholder="Email" value={formData.email} />
+              <div>Total: ${finalPrice()}</div>
+              <button>Comprar</button>
+            </form>
           </li>
         </ul>
       </div>
