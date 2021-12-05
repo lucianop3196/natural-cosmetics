@@ -45,7 +45,7 @@ function Cart() {
       .collection("orders")
       .add(order)
       .then(({ id }) => setOrderId(id))
-      .catch((err) => console.log(err))
+      .catch((err) => alert("Error:", err))
       .finally(() =>
         setFormData({
           name: "",
@@ -70,9 +70,7 @@ function Cart() {
             cartList.find((item) => item.props.id === docSnapshot.id).quantity,
         });
       });
-      batch.commit().then((res) => {
-        console.log("resultado batch:", res);
-      });
+      batch.commit()
       clearItems();
     });
   };

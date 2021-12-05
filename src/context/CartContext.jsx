@@ -23,14 +23,12 @@ const CartContextProvider = ({ children }) => {
       }
     } else {
       setCartList([...cartList, items]);
-      console.log(cartList);
     }
   }
   function deleteFromCart(id) {
     const itemIndex = cartList.findIndex((item) => item.props.id === id);
     cartList.splice(itemIndex, 1);
     setCartList([...cartList]);
-    console.log(cartList);
   }
   function clearItems() {
     cartList.splice(0);
@@ -38,7 +36,6 @@ const CartContextProvider = ({ children }) => {
   }
   // cartWidget counter
   let totalQuantity = 0; 
-  console.log(cartList);
   for (const i in cartList) {
     totalQuantity += cartList[i].quantity
   }

@@ -18,13 +18,13 @@ function ItemCount({ stock, onAdd, initial }) {
   return (
     <>
       <div className="itemCount">
-        <button onClick={removeProduct} className="counterButton">
+        <button onClick={removeProduct} className={count === 1 ? "counterButton counterButtonRed" : "counterButton"}>
           <i className="fas fa-minus"></i>
         </button>
         <span className="counter">{count}</span>
         <button
           onClick={addProduct}
-          className={count === stock ? "counterButtonRed" : "counterButton"}
+          className={count === stock ? "counterButton counterButtonRed" : "counterButton"}
         >
           <i className="fas fa-plus"></i>
         </button>
