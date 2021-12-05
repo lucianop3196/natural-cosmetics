@@ -44,7 +44,7 @@ function Cart() {
     dbQuery
       .collection("orders")
       .add(order)
-      .then(({id}) => setOrderId(id))
+      .then(({ id }) => setOrderId(id))
       .catch((err) => console.log(err))
       .finally(() =>
         setFormData({
@@ -53,7 +53,7 @@ function Cart() {
           email: "",
         })
       );
-    
+
     const itemsToUpdate = dbQuery.collection("items").where(
       firebase.firestore.FieldPath.documentId(),
       "in",
@@ -73,18 +73,17 @@ function Cart() {
       batch.commit().then((res) => {
         console.log("resultado batch:", res);
       });
+      clearItems();
     });
-
-
   };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const changeOrderStatus = () =>{
+  const changeOrderStatus = () => {
     setOrderCreated(false);
-  }
+  };
 
   return (
     <>
@@ -129,10 +128,13 @@ function Cart() {
             >
               <i className="far fa-trash-alt"></i>
             </button>{" "}
-            {orderCreated ? (<>
-            <p>Tu orden de compra es: {orderId}</p>
-              <Link to={"/"}><button onClick={changeOrderStatus}>Ver más productos</button></Link>
-              <p></p>
+            {orderCreated ? (
+              <>
+                <p>Tu orden de compra es: {orderId}</p>
+                <Link to={"/"}>
+                  <button onClick={changeOrderStatus}>Ver más productos</button>
+                </Link>
+                <p></p>
               </>
             ) : (
               <form onSubmit={createOrder} onChange={handleChange}>

@@ -3,12 +3,7 @@ import "../styles/CartWidget.css";
 import { useCartContext } from "../context/CartContext";
 
 function CartWidget() {
-  const { cartList } = useCartContext();
-  let totalQuantity = 0; 
-  console.log(cartList);
-  for (const i in cartList) {
-    totalQuantity += cartList[i].quantity
-  }
+  const { totalQuantity } = useCartContext();
   return (
     <button className="cartWidget">
       <i className="fas fa-shopping-cart"></i>

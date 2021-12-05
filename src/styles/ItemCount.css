@@ -19,6 +19,14 @@
   color: #fff;
 }
 
+.itemCount .counterButtonRed {
+  padding: 0.375rem 0.75rem;
+  border: 1px solid #be0000;
+  border-radius: 0.25rem;
+  background-color: #be0000;
+  color: #fff;
+}
+
 .itemCount span {
   text-align: center;
 }

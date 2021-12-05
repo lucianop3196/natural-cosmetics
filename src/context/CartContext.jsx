@@ -36,9 +36,15 @@ const CartContextProvider = ({ children }) => {
     cartList.splice(0);
     setCartList([...cartList]);
   }
+  // cartWidget counter
+  let totalQuantity = 0; 
+  console.log(cartList);
+  for (const i in cartList) {
+    totalQuantity += cartList[i].quantity
+  }
   return (
     <CartContext.Provider
-      value={{ cartList, addToCart, deleteFromCart, clearItems }}
+      value={{ cartList, addToCart, deleteFromCart, clearItems, totalQuantity }}
     >
       {children}
     </CartContext.Provider>
