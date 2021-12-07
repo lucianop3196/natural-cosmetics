@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/natural-cosmetics/static/css/main.22d6469a.chunk.css",
+    "main.js": "/natural-cosmetics/static/js/main.71366050.chunk.js",
+    "main.js.map": "/natural-cosmetics/static/js/main.71366050.chunk.js.map",
+    "runtime-main.js": "/natural-cosmetics/static/js/runtime-main.5fcfda14.js",
+    "runtime-main.js.map": "/natural-cosmetics/static/js/runtime-main.5fcfda14.js.map",
+    "static/js/2.a93e9d08.chunk.js": "/natural-cosmetics/static/js/2.a93e9d08.chunk.js",
+    "static/js/2.a93e9d08.chunk.js.map": "/natural-cosmetics/static/js/2.a93e9d08.chunk.js.map",
+    "index.html": "/natural-cosmetics/index.html",
+    "static/css/main.22d6469a.chunk.css.map": "/natural-cosmetics/static/css/main.22d6469a.chunk.css.map",
+    "static/js/2.a93e9d08.chunk.js.LICENSE.txt": "/natural-cosmetics/static/js/2.a93e9d08.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5fcfda14.js",
+    "static/js/2.a93e9d08.chunk.js",
+    "static/css/main.22d6469a.chunk.css",
+    "static/js/main.71366050.chunk.js"
+  ]
+}
