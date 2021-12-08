@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/NavBar.css";
 import CartWidget from "./CartWidget";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
@@ -11,10 +11,9 @@ function NavBar() {
       <Link to={"/category/Shampoo"}>Shampoo</Link>
       <Link to={"/category/Cuidado personal"}>Cuidado personal</Link>
       <Link to={"/category/Limpieza"}>Limpieza</Link>
-      <Link to={"/cart"}><CartWidget/></Link>
-      <a className="signIn" href="/signIn">
-        Iniciar sesión
-      </a>
+      <Link to={"/cart"}>
+        <CartWidget />
+      </Link>
     </div>
   );
 }

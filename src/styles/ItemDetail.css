@@ -69,24 +69,11 @@
 }
 
 .itemDetail .itemDetail_count .btnToCart {
-  padding: 0.375rem 0.75rem;
-  border: 1px solid #8f42ec;
-  border-radius: 0.25rem;
-  color: #8f42ec;
-  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
-  margin-top: 20px;
   margin-right: 20px;
 }
 
-.itemDetail .itemDetail_count .btnToCart:hover,
-.itemDetail .itemDetail_count .btnToCart:active,
-.itemDetail .itemDetail_count .btnToCart:focus {
-  color: #fff;
-  background-color: #8f42ec;
-}
-
-.itemDetail .itemDetail_count .btnBack {
+.itemDetail .itemDetail_count .btnBack,
+.itemDetail .itemDetail_count .btnToCart {
   padding: 0.375rem 0.75rem;
   border: 1px solid #8f42ec;
   border-radius: 0.25rem;
@@ -98,7 +85,10 @@
 
 .itemDetail .itemDetail_count .btnBack:hover,
 .itemDetail .itemDetail_count .btnBack:active,
-.itemDetail .itemDetail_count .btnBack:focus {
+.itemDetail .itemDetail_count .btnBack:focus,
+.itemDetail .itemDetail_count .btnToCart:hover,
+.itemDetail .itemDetail_count .btnToCart:active,
+.itemDetail .itemDetail_count .btnToCart:focus {
   color: #fff;
   background-color: #8f42ec;
 }

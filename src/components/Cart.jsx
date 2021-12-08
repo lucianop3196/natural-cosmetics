@@ -70,7 +70,7 @@ function Cart() {
             cartList.find((item) => item.props.id === docSnapshot.id).quantity,
         });
       });
-      batch.commit()
+      batch.commit();
       clearItems();
     });
   };
@@ -135,28 +135,35 @@ function Cart() {
                 <p></p>
               </>
             ) : (
-              <form onSubmit={createOrder} onChange={handleChange}>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Nombre"
-                  value={formData.name}
-                />
-                <input
-                  type="text"
-                  name="phone"
-                  placeholder="N° Celular"
-                  value={formData.phone}
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  value={formData.email}
-                />
-                <div>Total: ${finalPrice()}</div>
-                <button>Comprar</button>
-              </form>
+                <form onSubmit={createOrder} className="buyerForm">
+                  <fieldset>Completar orden de compra:</fieldset>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Nombre"
+                    value={formData.name}
+                    required
+                    onChange={handleChange}
+                  />
+                  <input
+                    type="number"
+                    name="phone"
+                    placeholder="N° Celular"
+                    value={formData.phone}
+                    required
+                    onChange={handleChange}
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={formData.email}
+                    required
+                    onChange={handleChange}
+                  />
+                  <div>Total: ${finalPrice()}</div>
+                  <button className="btnToBuy">Comprar</button>
+                </form>
             )}
           </li>
         </ul>

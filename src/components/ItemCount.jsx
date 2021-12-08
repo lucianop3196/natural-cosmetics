@@ -21,17 +21,19 @@ function ItemCount({ stock, onAdd, initial }) {
         <button onClick={removeProduct} className={count === 1 ? "counterButton counterButtonRed" : "counterButton"}>
           <i className="fas fa-minus"></i>
         </button>
-        <span className="counter">{count}</span>
+        {stock>0 ?<span className="counter">{count}</span>:<span>Sin stock</span> }
+        
         <button
           onClick={addProduct}
-          className={count === stock ? "counterButton counterButtonRed" : "counterButton"}
+          className={count >= stock ? "counterButton counterButtonRed" : "counterButton"}
         >
           <i className="fas fa-plus"></i>
         </button>
       </div>
-      <button className="onAdd" onClick={() => onAdd(count)}>
+      {stock>0 ? <button className="onAdd" onClick={() => onAdd(count)}>
         Agregar al carrito
-      </button>
+      </button> : ""}
+      
     </>
   );
 }

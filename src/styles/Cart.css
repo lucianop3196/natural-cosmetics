@@ -75,6 +75,47 @@ body .cartContainer .responsive-table .col-4 {
       flex-basis: 10%;
 }
 
+body .cartContainer .responsive-table .buyerForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .cartContainer .responsive-table .buyerForm fieldset {
+  text-align: end;
+}
+
+body .cartContainer .responsive-table .buyerForm input {
+  margin: 8px;
+  border: none;
+  height: 45px;
+  background-color: red;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#95a5a6), color-stop(40%, white));
+  background-image: linear-gradient(to top, #95a5a6, white 40%);
+}
+
+body .cartContainer .responsive-table .buyerForm input:focus,
+body .cartContainer .responsive-table .buyerForm input:hover {
+  border-bottom: 2px solid #95a5a6;
+}
+
+body .cartContainer .responsive-table .buyerForm .btnToBuy {
+  padding: 0.375rem 0.75rem;
+  border: 1px solid #8f42ec;
+  border-radius: 0.25rem;
+  color: #8f42ec;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+  margin-top: 20px;
+}
+
+body .cartContainer .responsive-table .buyerForm .btnToBuy:hover,
+body .cartContainer .responsive-table .buyerForm .btnToBuy:active,
+body .cartContainer .responsive-table .buyerForm .btnToBuy:focus {
+  color: #fff;
+  background-color: #8f42ec;
+}
+
 @media all and (max-width: 767px) {
   body .cartContainer .responsive-table .table-header {
     display: none;
